@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
-void check(string s){
-    int lower=0;
-    int upper=0;
+void solve(){
+    string s; cin >> s;
+    int lower=0 , upper=0;
     for(char c:s){
         if(c>='a' && c<='z')
             lower |= (1<<(c-'a'));
@@ -12,8 +12,11 @@ void check(string s){
     cout<<(lower == ((1<<26)-1) && upper == ((1<<26)-1) ? "Yes" : "No")<<endl;
 }
 int main(){
-    string st;
-    cin >> st;
-    check(st);
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    int tc = 1;
+    while(tc--){
+        solve();
+    }
     return 0;
 }
